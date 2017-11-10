@@ -29,7 +29,13 @@ Install
 Download the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+curl --remote-name https://raw.githubusercontent.com/adreform/laptop/master/mac
+```
+
+Download the Ad Reform local addons to your home directory:
+
+```sh
+cd ~ && curl --remote-name https://raw.githubusercontent.com/adreform/laptop/master/.laptop.local
 ```
 
 Review the script (avoid running scripts you haven't read!):

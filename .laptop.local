@@ -1,0 +1,29 @@
+#!/bin/sh
+
+brew bundle --file=- <<EOF
+# helpful utilities
+cask "ngrok"
+brew "watch"
+
+# for running app via vagrant+chef
+cask "chefdk"
+cask "vagrant"
+cask "virtualbox"
+
+# apps
+cask "sublime-text"
+cask "tableplus"
+cask "recordit"
+cask "github"
+EOF
+
+# install vagrant plugins
+vagrant plugin install vagrant-omnibus
+vagrant plugin install vagrant-berkshelf
+vagrant plugin install vagrant-vbguest
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# tell asdf to support .ruby-version files
+echo -e '\nlegacy_version_file = yes\n' >> ~/.asdfrc
