@@ -4,11 +4,17 @@ brew bundle --file=- <<EOF
 # helpful utilities
 cask "ngrok"
 brew "watch"
+brew "mailhog"
 
 # for running app via vagrant+chef
 cask "chefdk"
+brew "packer"
 cask "vagrant"
 cask "virtualbox"
+cask "docker"
+
+# for running userfeed
+brew "aws-elasticbeanstalk"
 
 # apps
 cask "sublime-text"
@@ -16,6 +22,9 @@ cask "tableplus"
 cask "recordit"
 cask "github"
 EOF
+
+# once mailhog is installed, run this to have it launch on startup
+# brew services start mailhog
 
 # install vagrant plugins
 vagrant plugin install vagrant-omnibus
