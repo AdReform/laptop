@@ -1,38 +1,56 @@
 #!/bin/sh
 
+echo "installing apps and such via Homebrew"
+
 brew bundle --file=- <<EOF
 # helpful utilities
+brew "mailhog" # smtp server
 cask "ngrok"
-brew "watch"
-brew "mailhog"
-
-# for running app via vagrant+chef
-cask "chefdk"
-brew "packer"
-cask "vagrant"
-cask "virtualbox"
-cask "docker"
-
-# for running userfeed
-brew "aws-elasticbeanstalk"
 
 # apps
+## dev
+cask "github" # Github for Mac
+cask "gitify" # menubar Git notifications
+cask "insomnia" # REST API GUI
 cask "sublime-text"
-cask "tableplus"
-cask "recordit"
-cask "github"
+cask "tableplus" # DB GUI
+cask "tuple"
+
+## productivity
+cask "alfred"
+cask "itsycal"
+cask "loom"
+cask "missive"
+cask "notion"
+cask "rectangle" # window manager
+cask "rescuetime"
+cask "rocket"
+cask "slack"
+cask "soulver"
+cask "zappy" # Zapier gif/screenshot tool
+cask "zoom"
+
+## music
+cask "spotify"
+
+## system utilities
+cask "backblaze"
+
+## browsers
+cask "firefox"
+cask "google-chrome"
 EOF
 
+echo "apps installed!"
+
 # once mailhog is installed, run this to have it launch on startup
-# brew services start mailhog
+echo "run 'brew services start mailhog' to start the mailhog service"
 
-# install vagrant plugins
-vagrant plugin install vagrant-omnibus
-vagrant plugin install vagrant-berkshelf
-vagrant plugin install vagrant-vbguest
-
+echo "installing oh-my-zsh"
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # tell asdf to support .ruby-version files
 echo -e '\nlegacy_version_file = yes\n' >> ~/.asdfrc
+
+echo "done!"

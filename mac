@@ -120,22 +120,26 @@ brew "universal-ctags", args: ["HEAD"]
 brew "git"
 brew "openssl"
 brew "rcm"
-brew "reattach-to-user-namespace"
-brew "the_silver_searcher"
-brew "tmux"
-brew "vim"
-brew "watchman"
+# brew "reattach-to-user-namespace"
+# brew "the_silver_searcher"
+# brew "tmux"
+# brew "vim"
+# brew "watchman"
 brew "zsh"
 
 # Heroku
 brew "heroku/brew/heroku"
-brew "parity"
+# brew "parity"
 
 # GitHub
 brew "gh"
 
-# Image manipulation
+# AWS
+brew "awscli"
+
+# Image & video manipulation
 brew "imagemagick"
+brew "ffmpeg"
 
 # Programming language prerequisites and package managers
 brew "libyaml" # should come after openssl
